@@ -1,0 +1,234 @@
+:root {
+  --color-primary: #3E2723;       /* тёмный шоколад (шапка, футер) */
+  --color-primary-dark: #2E1A15;  /* темнее */
+  --color-accent: #5D4037;        /* тёплый коричневый (кнопки, заголовки) */
+  --color-accent-light: #8D6E63;  /* капучино */
+  --color-bg: #FDFDFB;            /* белый фон */
+  --color-text: #2E1A15;          /* основной текст */
+  --color-text-light: #5D4037;    /* второстепенный */
+  --color-border: #D7CCC8;        /* граница */
+  --color-card: #FFFFFF;          /* белые карточки */
+
+  /* Размеры и эффекты */
+  --border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(62, 39, 35, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* Общие стили */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Заголовки — элегантный serif */
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 0;
+}
+
+/* Ссылки */
+a {
+  text-decoration: none;
+}
+
+/* Шапка */
+.bg-primary-custom {
+  background-color: var(--color-primary) !important;
+}
+
+.text-light-custom {
+  color: #FDFDFB !important;
+}
+
+.navbar-brand,
+.nav-link {
+  font-weight: 600;
+}
+
+/* Превью */
+.hero-bg {
+  background-color: var(--color-primary-dark);
+  color: #FDFDFB;
+}
+
+/* Кнопки */
+.btn-accent {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-accent:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3);
+}
+
+/* Карточки курсов */
+.card-course {
+  height: 100%;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.card-course:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.12);
+}
+
+/* Изображение в карточке */
+.course-img {
+  height: 180px;
+  width: 100%;
+  background-color: #F5F0E6;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.course-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  flex-grow: 1;
+  padding: 1.25rem;
+}
+
+.card-body p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Футер карточки — кнопка по центру и на одной линии */
+.card-footer {
+  padding: 1.25rem;
+  background-color: white;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.card-footer .btn {
+  margin: 0 auto;
+  width: auto;
+}
+
+/* Блоки про курсы (на странице courses.html) */
+.course-detail {
+  background-color: var(--color-card);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Маркеры */
+ul.neutral-list {
+  padding-left: 1.5rem;
+}
+
+
+/* Футер */
+.bg-footer {
+  background-color: var(--color-primary);
+  color: #FDFDFB;
+}
+
+.footer a {
+  color: #E0D6D0;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
+/* Кнопка "наверх" */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  transition: var(--transition);
+}
+
+.back-to-top.show {
+  display: flex;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.1);
+}
+
+p {
+  margin: 30px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .btn-accent {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .course-detail {
+    padding: 20px 15px;
+  }
+
+  .course-img {
+    height: 150px;
+    font-size: 0.85rem;
+  }
+
+  .card-footer {
+    padding: 1rem;
+  }
+
+  .card-footer .btn {
+    width: 100%;
+  }
+}
